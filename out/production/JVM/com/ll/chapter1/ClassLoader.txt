@@ -1,0 +1,113 @@
+Compiled from "ClassLoaderTest.java"
+public class com.ll.chapter1.ClassLoaderTest {
+  public com.ll.chapter1.ClassLoaderTest();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: ldc           #3                  // class java/lang/String
+       5: invokevirtual #4                  // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       8: invokevirtual #5                  // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+      11: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      14: ldc           #6                  // class com/sun/crypto/provider/DESKeyFactory
+      16: invokevirtual #4                  // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+      19: invokevirtual #5                  // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+      22: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      25: ldc           #7                  // class com/ll/chapter1/ClassLoaderTest
+      27: invokevirtual #4                  // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+      30: invokevirtual #5                  // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+      33: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      36: ldc           #8                  // String ----------------------------------------------
+      38: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      41: invokestatic  #10                 // Method java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+      44: astore_1
+      45: aload_1
+      46: invokevirtual #11                 // Method java/lang/ClassLoader.getParent:()Ljava/lang/ClassLoader;
+      49: astore_2
+      50: aload_2
+      51: invokevirtual #11                 // Method java/lang/ClassLoader.getParent:()Ljava/lang/ClassLoader;
+      54: astore_3
+      55: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      58: new           #12                 // class java/lang/StringBuilder
+      61: dup
+      62: invokespecial #13                 // Method java/lang/StringBuilder."<init>":()V
+      65: ldc           #14                 // String the appClassLoader:
+      67: invokevirtual #15                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      70: aload_1
+      71: invokevirtual #16                 // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+      74: invokevirtual #17                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      77: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      80: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      83: new           #12                 // class java/lang/StringBuilder
+      86: dup
+      87: invokespecial #13                 // Method java/lang/StringBuilder."<init>":()V
+      90: ldc           #18                 // String the extClassLoader:
+      92: invokevirtual #15                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      95: aload_2
+      96: invokevirtual #16                 // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+      99: invokevirtual #17                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     102: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     105: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     108: new           #12                 // class java/lang/StringBuilder
+     111: dup
+     112: invokespecial #13                 // Method java/lang/StringBuilder."<init>":()V
+     115: ldc           #19                 // String the bootstrapClassLoader:
+     117: invokevirtual #15                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     120: aload_3
+     121: invokevirtual #16                 // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+     124: invokevirtual #17                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     127: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     130: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     133: ldc           #8                  // String ----------------------------------------------
+     135: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     138: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     141: ldc           #20                 // String bootstrapLoader 加载以下文件:
+     143: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     146: invokestatic  #21                 // Method sun/misc/Launcher.getBootstrapClassPath:()Lsun/misc/URLClassPath;
+     149: invokevirtual #22                 // Method sun/misc/URLClassPath.getURLs:()[Ljava/net/URL;
+     152: astore        4
+     154: aload         4
+     156: astore        5
+     158: aload         5
+     160: arraylength
+     161: istore        6
+     163: iconst_0
+     164: istore        7
+     166: iload         7
+     168: iload         6
+     170: if_icmpge     194
+     173: aload         5
+     175: iload         7
+     177: aaload
+     178: astore        8
+     180: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     183: aload         8
+     185: invokevirtual #5                  // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+     188: iinc          7, 1
+     191: goto          166
+     194: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     197: ldc           #8                  // String ----------------------------------------------
+     199: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     202: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     205: ldc           #23                 // String extClassLoader 加载以下文件:
+     207: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     210: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     213: ldc           #24                 // String java.ext.dirs
+     215: invokestatic  #25                 // Method java/lang/System.getProperty:(Ljava/lang/String;)Ljava/lang/String;
+     218: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     221: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     224: ldc           #8                  // String ----------------------------------------------
+     226: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     229: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     232: ldc           #26                 // String appClassLoader 加载以下文件:
+     234: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     237: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+     240: ldc           #27                 // String java.class.path
+     242: invokestatic  #25                 // Method java/lang/System.getProperty:(Ljava/lang/String;)Ljava/lang/String;
+     245: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+     248: return
+}
